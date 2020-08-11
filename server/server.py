@@ -15,6 +15,7 @@ model = LoadModel('../train/weights.npy')
 @app.route('/')
 def main():
     ids, prob = model.similar_docs(124,topk=10,use='torch')
+    ids = [str(i) for i in 
     ids = "------------".join(ids)
     type(ids)
     prob= [str(i) for i in prob]

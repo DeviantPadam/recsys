@@ -1,0 +1,2 @@
+git+https://github.com/DeviantPadam/torch2vec#master
+flask

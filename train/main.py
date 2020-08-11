@@ -9,7 +9,7 @@ from torch2vec.torch2vec import DM
 from torch2vec.data import DataPreparation
 # pd.read_csv('../input/')
 
-data = DataPreparation('../input/recsysluc/semantic_dump.txt',vocab_size=int(2e5)) #vocab_size to restrict vocabulary size
+data = DataPreparation('../data/semantic_dump.txt',vocab_size=int(2e5)) #vocab_size to restrict vocabulary size
 
 data.vocab_builder()
 

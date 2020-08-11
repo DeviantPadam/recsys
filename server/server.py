@@ -10,19 +10,16 @@ from flask import Flask
 from torch2vec.torch2vec import LoadModel
 
 app = Flask(__name__)
-model = LoadModel('/home/deviantpadam/weights.npy')
+model = LoadModel('../train/weights.npy')
 
 @app.route('/')
 def main():
-    
-    ids, prob = model.similar_docs('7JTc5wMQU4XyEGmtFhQTYq',topk=10,use='torch')
-
+    ids, prob = model.similar_docs('124',topk=10,use='torch')
     ids = "------------".join(ids)
     type(ids)
-    
     prob= [str(i) for i in prob]
-    prob = "-----------".join(prob)        
+    prob = "-----------".join(prob)
     return ids+prob
 
 if '__main__'==__name__:
-    app.run()
+    app.run(host="0.0.0.0", port="5002")

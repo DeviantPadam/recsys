@@ -15,8 +15,8 @@ model = LoadModel('/home/deviantpadam/weights.npy')
 @app.route('/')
 def main():
     
-    ids, prob = model.similar_docs('7JTc5wMQU4XyEGmtFhQTYq',topk=10,use='torch')
-
+    ids, prob = model.similar_docs(124,topk=10,use='torch')
+    ids = [str(i) for i in ids]
     ids = "------------".join(ids)
     type(ids)
     

@@ -83,6 +83,6 @@ doc, context, target_noise_ids = data.get_data(window_size=5,num_noise_words=10)
 model = DM(vec_dim=100,num_docs=len(data),num_words=data.vocab_size).cuda()
 
 num_workers = os.cpu_count()
-model.fit(doc_ids=doc,context=context,target_noise_ids=target_noise_ids,epochs=20,batch_size=10000,num_workers=num_workers)
+model.fit(doc_ids=doc,context=context,target_noise_ids=target_noise_ids,epochs=20,batch_size=8000,num_workers=num_workers)
 
 model.save_model(data.document_ids,data.args,file_name='weights')

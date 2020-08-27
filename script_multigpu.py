@@ -86,8 +86,8 @@ doc, context, target_noise_ids = data.get_data(window_size=5,num_noise_words=10)
 
 num_workers = os.cpu_count()
 dataset = Dataset(doc, context, target_noise_ids)
-dataloader = torch.utils.data.DataLoader(dataset,batch_size=10000,
-                                                 num_workers=num_workers)
+dataloader = torch.utils.data.DataLoader(dataset,batch_size=10000
+                                                 )
 
 
 model = DM(vec_dim=100,num_docs=len(data),num_words=data.vocab_size)

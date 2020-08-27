@@ -91,7 +91,7 @@ dataloader = torch.utils.data.DataLoader(dataset,batch_size=10000,
 
 
 model = DM(vec_dim=100,num_docs=len(data),num_words=data.vocab_size)
-trainer = pl.Trainer(gpus=-1,max_epochs=20)
+trainer = pl.Trainer(gpus=[0],max_epochs=20)
 trainer.fit(model,train_dataloader=dataloader)
 
 model.save_model(data.document_ids,data.args,file_name='weights')

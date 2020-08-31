@@ -59,7 +59,7 @@ corpus_path = 'recsys/suggest_dump.txt'
 save_to = 'weights'
 
 
-train = pd.read_csv(corpus_path)
+train = pd.read_csv(corpus_path,delimiter='\t')
 train.fillna('none',inplace=True)
 corpus = train['title']+' '+train['summary']+' '+train['authors']+' '+train['subjects']+' '+train['tasks']
 corpus.name='text'
